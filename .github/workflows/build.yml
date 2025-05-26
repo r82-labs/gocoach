@@ -1,4 +1,4 @@
-name: Dart
+name: Build
 
 on:
   push:
@@ -12,22 +12,17 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-      - run: flutter pub get
-      - run: flutter --version
-      - run: flutter analyze
-      - run: flutter test
-  sonarqube:
-    name: SonarQube
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - run: flutter pub get
+      - run: flutter --version
+      - run: flutter analyze
+      - run: flutter test
