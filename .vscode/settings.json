@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "r82-labs",
+        "projectKey": "r82-labs_gocoach"
+    }
+}
