@@ -1,0 +1,10 @@
+{
+  "sonarQube": {
+    "project": {
+      "connectionId": "r82-labs",
+      "projectKey": "r82-labs_gocoach",
+      "enableNotifications": true,
+      "autoUpdate": true
+    }
+  }
+}
